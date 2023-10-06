@@ -5,11 +5,11 @@ The primary goal of this project is to capture and save the results of functions
 
 ### Modules
 
-1. main.py
+#### 1. main.py
    
 This module serves as the entry point for running the project and demonstrating its functionality.
 
-2. functionsExamples.py
+#### 2. functionsExamples.py
    
 This module contains example functions that can be used to test the functionality of the decorators (you could use any function that you wnat to). Here's what example functions do:
 
@@ -19,7 +19,7 @@ This module contains example functions that can be used to test the functionalit
   
   - func2(a, b): This is another simple function that takes two arguments a and b and returns the sum of a + b and the value of a.
 
-3. savingReturnsOfDifferentFunc.py
+#### 3. savingReturnsOfDifferentFunc.py
 
 This module contains decorators and helper functions for measuring the execution time of functions and saving their results to a database. Here are the main objectives and operations in this module:
 
@@ -33,11 +33,11 @@ These modules collectively enable easy measurement of function execution times a
 ### Usage
 To test your own Python functions using the functionality provided by this project, follow these steps:
 
-1. Prepare Your Functions
+#### 1. Prepare Your Functions
 Before testing the project with your own functions, make sure you have defined the functions you want to test in a separate Python file.
 
 Subsequent modifications must be made in the main module.
-2. Import Modules
+#### 2. Import Modules
 
 In your own Python script, import the necessary modules from the project:
 
@@ -46,7 +46,7 @@ from your_own_functions_module import your_function1, your_function2, ...
 
 Replace your_own_functions_module with the name of the Python file where your own functions are defined. Also, replace your_function1, your_function2, etc., with the names of your own functions.
 
-3. Initialize Database and Table
+#### 3. Initialize Database and Table
 
 Initialize a database connection and create a table to store the results of your functions:
 
@@ -55,7 +55,7 @@ creatingTable('functionsResults', cur, con)
 
 Replace 'yourDatabase' with the desired name for your SQLite database. The table 'functionsResults' will store the results.
 
-4. Decorate Your Functions
+#### 4. Decorate Your Functions
 
 Decorate your own functions with the decoratorTime and decoratorSavingResults decorators. For example:
 
@@ -64,7 +64,7 @@ decorated_function2 = decoratorSavingResults(decoratorTime(your_function2), allD
 
 Replace your_function1, your_function2, etc., with your own function names, and assign the decorated versions to new variables. allData is the dictionary where the results will be stored.
 
-5. Call Decorated Functions
+#### 5. Call Decorated Functions
 
 Call your decorated functions as needed within your script:
 
