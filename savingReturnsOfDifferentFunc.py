@@ -48,12 +48,7 @@ def decoratorSavingResults(func, dict, con, nameTab, curs):
     return wrapper2
 
 
-def func1(a):
-    return a**a
 
-
-def func2(a, b):
-    return a+b, a
 
 
 def openingDb(nameDb):
@@ -65,7 +60,7 @@ def openingDb(nameDb):
     return cursor, connectionDb
 
 
-def creatingTable(nameTable, cursor):
+def creatingTable(nameTable, cursor, con):
     cursor.execute(f"""CREATE TABLE if not exists {nameTable}(
             id INTEGER PRIMARY KEY,
             funcName text,
@@ -73,6 +68,8 @@ def creatingTable(nameTable, cursor):
             executionTime text,
             returned text)          
             """)
+    cursor.execute(f'''DELETE FROM {nameTable}''')
+    con.commit()
 
 
 def addToTable(nameFunc, nr, timeOfRun, returned, nameTable, cursor, con):
